@@ -20,6 +20,27 @@ header img {
     height: 100%;
 }
 
+.navbar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    height: 100%;
+
+}
+
+.navbar a {
+    display: flex;
+    padding: 0 4px;
+    height: 100%;
+    align-items: center;
+    transition: background-color 300ms;
+}
+
+header nav a:hover {
+    background-color: green;
+    color: white;
+}
+
 h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
