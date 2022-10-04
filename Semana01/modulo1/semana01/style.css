@@ -2,6 +2,24 @@ body {
     background-color: lightcyan;
 }
 
+header {
+    position: sticky;
+    top: 0;
+    height: 40px;
+    padding: 2px 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: lightblue;
+}
+
+header img {
+    width: auto;
+    height: 100%;
+}
+
 h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
@@ -17,16 +35,17 @@ p {
     font-size: 14px;
 }
 
-a:not(.imageCredits) {
+.imagesButton {
     display: inline-flex;
     width: 30px;
+    height: 30px;
     border: 2px solid black;
     border-radius: 8px;
     padding: 10px;
     margin-top: 20px;
-    
 }
 
-a > img {
+.imagesButton img {
     width: 30px;
+    height: 30px;
 }
