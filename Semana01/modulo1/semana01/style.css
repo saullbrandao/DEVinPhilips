@@ -12,3 +12,17 @@ h1 {
 p {
     font-size: 14px;
 }
+
+a:not(.imageCredits) {
+    display: inline-flex;
+    width: 30px;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px;
+    
+}
+
+a > img {
+    width: 30px;
+}
