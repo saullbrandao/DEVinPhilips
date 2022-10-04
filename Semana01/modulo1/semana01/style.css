@@ -70,3 +70,15 @@ p {
     width: 30px;
     height: 30px;
 }
+
+footer {
+    position: sticky;
+    bottom: 0;
+    background-color: lightsalmon;
+    padding: 8px;
+}
+
+.imageCredits {
+    display: block;
+    margin-top: 25px;
+}
