@@ -1,5 +1,12 @@
+html,
 body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
     display: flex;
+    min-height: 100vh;
 }
 
 img {
