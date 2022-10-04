@@ -1,0 +1,14 @@
+body {
+    background-color: lightcyan;
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: red;
+    text-align: center;
+}
+
+p {
+    font-size: 14px;
+}
