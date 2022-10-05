@@ -65,7 +65,7 @@ p {
     font-size: 14px;
 }
 
-.imagesButton {
+.images-button {
     display: inline-flex;
     width: 30px;
     height: 30px;
@@ -75,7 +75,7 @@ p {
     margin-top: 20px;
 }
 
-.imagesButton img {
+.images-button img {
     width: 30px;
     height: 30px;
 }
@@ -87,7 +87,7 @@ footer {
     padding: 8px;
 }
 
-.imageCredits {
+.image-credits {
     display: block;
     margin-top: 25px;
 }
