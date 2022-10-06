@@ -2,6 +2,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -9,6 +10,10 @@ body {
     background-color: lightcyan;
     display: flex;
     flex-direction: column;
+}
+
+p {
+    font-size: 14px;
 }
 
 header {
@@ -24,17 +29,22 @@ header {
     background-color: lightblue;
 }
 
-header img {
+header>img {
     width: auto;
     height: 100%;
 }
 
 .navbar {
     display: flex;
-    gap: 8px;
     align-items: center;
     height: 100%;
+}
 
+.navbar ul {
+    display: flex;
+    gap: 8px;
+    height: 100%;
+    list-style: none;
 }
 
 .navbar a {
@@ -42,10 +52,11 @@ header img {
     padding: 0 4px;
     height: 100%;
     align-items: center;
+    text-decoration: none;
     transition: background-color 300ms;
 }
 
-header nav a:hover {
+.navbar a:hover {
     background-color: green;
     color: white;
 }
@@ -61,10 +72,6 @@ h1 {
     background-size: cover;
 }
 
-p {
-    font-size: 14px;
-}
-
 .images-button {
     display: inline-flex;
     width: 30px;
@@ -75,9 +82,14 @@ p {
     margin-top: 20px;
 }
 
-.images-button img {
+.images-button>img {
     width: 30px;
     height: 30px;
+}
+
+iframe {
+    width: 800px;
+    height: 600px;
 }
 
 footer {
