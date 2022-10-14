@@ -2,8 +2,7 @@ function tabuada() {
     let numero = Number(prompt("Digite um número"))
     if (isNaN(numero)) {
         alert("Número inválido. Tente novamente.")
-        tabuada()
-        return
+        return tabuada()
     }
 
     let resultadoTabuada = '';
