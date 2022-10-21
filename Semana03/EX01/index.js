@@ -1,6 +1,8 @@
 const entradas = [
   [56, 65, 64, -3, 23, 42, -15, 65, 14, 32, 78, 70, 47],
   [],
+  'tg4gh0',
+  ['vfvdf', 5, 45],
   [1],
   [1, -1],
   null,
@@ -11,8 +13,8 @@ const entradas = [
 const procuraMinMax = (numeros) => {
   // Checa se a entrada é uma Array
   if (Array.isArray(numeros)) {
-    let max = numeros[0]
-    let min = max;
+    let max = -Infinity
+    let min = Infinity
 
     numeros.forEach(elemento => {
       // Só faz a comparação se o elemento for um number(evita que o javascript faça coerção de tipo) 
@@ -23,7 +25,7 @@ const procuraMinMax = (numeros) => {
     })
 
     // imprime a resposta e retorna a função se o elemento for um number
-    if (!isNaN(max)) {
+    if (min !== Infinity && max !== -Infinity) {
       console.log(`Max: ${max} e Min: ${min}`)
       return
     }
