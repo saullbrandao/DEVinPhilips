@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#page-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+
+  background-color: gray;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+#logo {
+  width: 50px;
+}
+
+#page-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background-color: lightgray;
+  padding: 8px 16px;
+}
+
+#redes-sociais {
+  display: flex;
+  gap: 16px;
+}
+
+.social-logo {
+  width: 30px;
+}
