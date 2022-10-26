@@ -3,9 +3,12 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-#page-header {
+header {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -16,11 +19,29 @@ body {
   font-size: 1.5rem;
 }
 
-#logo {
+header > #logo {
   width: 50px;
 }
 
-#page-footer {
+main {
+  flex: 1;
+  padding-bottom: 16px;
+}
+
+main > #criar-conta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main > #criar-conta > form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 40%;
+}
+
+footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,11 +51,11 @@ body {
   padding: 8px 16px;
 }
 
-#redes-sociais {
+footer > #redes-sociais {
   display: flex;
   gap: 16px;
 }
 
-.social-logo {
+footer > #redes-sociais .social-logo {
   width: 30px;
 }

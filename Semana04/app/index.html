@@ -14,17 +14,42 @@
   </head>
 
   <body>
-    <header id="page-header">
+    <header>
       <img id="logo" src="../images/logo.png" alt="logo">
       <span>Conta Bancária</span>
     </header>
 
+    <main>
+      <section id="criar-conta">
+        <h1>Criar Conta</h1>
+        <form>
+          <label for="nome">Nome</label>
+          <input type="text" name="nome" id="nome">
 
-    <footer id="page-footer">
+          <label for="cpf">CPF</label>
+          <input type="text" name="cpf" id="cpf">
+
+          <label for="celular">Celular</label>
+          <input type="text" name="celular" id="celular">
+
+          <label for="senha">Senha</label>
+          <input type="password" name="senha" id="senha">
+
+          <label for="confirmar-senha">Confirmar Senha</label>
+          <input type="password" name="confirmar-senha" id="confirmar-senha">
+
+          <div>
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
       <section>
         <span>Endereço: Rua Lorem ipsum, 999. Lorem - LI.</span>
       </section>
-
       <section id="redes-sociais">
         <a href="#">
           <img class="social-logo" src="../images/instagram.png" alt="instagram">
