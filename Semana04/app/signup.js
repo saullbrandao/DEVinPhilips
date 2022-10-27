@@ -37,6 +37,7 @@ form.addEventListener('submit', (event) => {
 
   clients.push(newClient)
 
+  localStorage.setItem('clients', JSON.stringify(clients))
   alert(`Conta criada com sucesso: ${newClient.account}`)
 
   form.reset()
@@ -55,7 +56,7 @@ const isNameValid = name => (
 const isCPFValid = cpf => (
   typeof cpf === 'string'
   && CPF_REGEX.test(cpf)
-  && !clients.some(client => client.cpf === cpf)
+  && !clients.some(client => client?.cpf === cpf)
 )
 
 const isPhoneValid = phone => (
