@@ -18,7 +18,7 @@ form.addEventListener('submit', (event) => {
   const formData = new FormData(form)
 
   const operation = formData.get('operation')
-  const value = formData.get('value')
+  const value = Number(formData.get('value'))
   const account = Number(formData.get('account'))
   const password = formData.get('password')
 
@@ -47,7 +47,15 @@ function withdraw({ account, value }) {
 }
 
 function deposit({ account, value }) {
-  console.log(account, value)
+  if (value <= 0) {
+    alert('Valor inválido')
+    return
+  }
+
+  const client = clients.find(client => client.account === account)
+  client.balance += value
+
+  alert(`Depósito efetuado com sucesso. Novo saldo: ${client.balance}`)
 }
 
 function getBalance(account) {
