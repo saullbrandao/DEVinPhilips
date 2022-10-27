@@ -51,5 +51,6 @@ function deposit({ account, value }) {
 }
 
 function getBalance(account) {
-  console.log(account)
+  const client = clients.find(client => client.account === account)
+  alert(`Saldo: ${client.balance}`)
 }
