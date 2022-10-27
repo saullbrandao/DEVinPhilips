@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 
-    <script src="app.js" defer></script>
+    <script src="app.js" type="module"></script>
   </head>
 
   <body>
@@ -20,24 +20,49 @@
     </header>
 
     <main>
-      <section id="criar-conta">
-        <h1>Criar Conta</h1>
-        <form id="form-cadastro" method="post">
-          <label for="nome">Nome</label>
-          <input type="text" name="nome" id="nome" minlength="3" placeholder="Mínimo 3 caracteres" required>
+      <section id="main-section">
+        <form id="signup-form" method="post">
+          <h2>Criar Conta</h2>
+          <label for="name">Nome</label>
+          <input type="text" name="name" id="name" minlength="3" placeholder="Mínimo 3 caracteres" required>
 
           <label for="cpf">CPF</label>
           <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" minlength="11" maxlength="14" required>
 
-          <label for="celular">Celular</label>
-          <input type="text" name="celular" id="celular" placeholder="(00) 00000-0000" required>
+          <label for="phone">Celular</label>
+          <input type="text" name="phone" id="phone" placeholder="(00) 00000-0000" required>
 
-          <label for="senha">Senha</label>
-          <input type="password" name="senha" id="senha" minlength="3" placeholder="Mínimo 3 caracteres" required>
+          <label for="password">Senha</label>
+          <input type="password" name="password" id="password" minlength="3" placeholder="Mínimo 3 caracteres" required>
 
-          <label for="confirmar-senha">Confirmar Senha</label>
-          <input type="password" name="confirmar-senha" id="confirmar-senha" minlength="3"
+          <label for="password-confirm">Confirmar Senha</label>
+          <input type="password" name="password-confirm" id="password-confirm" minlength="3"
             placeholder="Confirme a senha digitada" required>
+
+          <div>
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
+          </div>
+        </form>
+
+        <form id="operations-form" method="post">
+          <h2>Operações</h2>
+
+          <label for="operation">Operação</label>
+          <select name="operation" id="operation">
+            <option value="withdraw">Saque</option>
+            <option value="deposit">Depósito</option>
+            <option value="balance">Saldo</option>
+          </select>
+
+          <label for="value">Valor</label>
+          <input type="number" name="value" id="value" required>
+
+          <label for="account">Conta</label>
+          <input type="text" name="account" id="account" required>
+
+          <label for="operation-password">Senha</label>
+          <input type="password" name="password" id="operation-password" minlength="3" required>
 
           <div>
             <button type="submit">Enviar</button>
@@ -51,7 +76,7 @@
       <section>
         <span>Endereço: Rua Lorem ipsum, 999. Lorem - LI.</span>
       </section>
-      <section id="redes-sociais">
+      <section id="social-media">
         <a href="#">
           <img class="social-logo" src="../images/instagram.png" alt="instagram">
         </a>
