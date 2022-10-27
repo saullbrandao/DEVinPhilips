@@ -39,11 +39,25 @@ form.addEventListener('submit', (event) => {
       break
   }
 
+  form.reset()
 })
 
 
 function withdraw({ account, value }) {
-  console.log(account, value)
+  if (value <= 0) {
+    alert('Valor inválido')
+    return
+  }
+
+  const client = clients.find(client => client.account === account)
+
+  if (client.balance < value) {
+    alert('Saldo insuficiente para essa operação.')
+    return
+  }
+
+  client.balance -= value
+  alert(`Saque efetuado com sucesso. Novo saldo: ${client.balance}`)
 }
 
 function deposit({ account, value }) {
