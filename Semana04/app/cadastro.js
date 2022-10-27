@@ -8,18 +8,18 @@ form.addEventListener('submit', (event) => {
 
   const formData = new FormData(form)
 
-  const nome = formData.get('name')
+  const name = formData.get('name')
   const cpf = formData.get('cpf')
-  const celular = formData.get('phone')
-  const senha = formData.get('password')
-  const confirmarSenha = formData.get('password-confirm')
+  const phone = formData.get('phone')
+  const password = formData.get('password')
+  const passwordConfirm = formData.get('password-confirm')
 
   const formElements = {
-    nome,
+    name,
     cpf,
-    celular,
-    senha,
-    confirmarSenha
+    phone,
+    password,
+    passwordConfirm
   }
 
   if (!isFormValid(formElements)) {
@@ -27,24 +27,24 @@ form.addEventListener('submit', (event) => {
     return alert('Formulário inválido.')
   }
 
-  const conta = Math.floor(1000 + Math.random() * 90000)
-  const saldo = 0
+  const account = Math.floor(1000 + Math.random() * 90000)
+  const balance = 0
 
 
   const newClient = {
-    nome, cpf, celular, senha, conta, saldo
+    name, cpf, phone, password, account, balance
   }
 
   clients.push(newClient)
 
-  alert(`Conta criada com sucesso: ${newClient.conta}`)
+  alert(`Conta criada com sucesso: ${newClient.account}`)
 
   form.reset()
 })
 
 
-function isFormValid({ nome, cpf, celular, senha, confirmarSenha }) {
-  return isNameValid(nome) && isCPFValid(cpf) && isPhoneValid(celular) && isPasswordValid(senha, confirmarSenha)
+function isFormValid({ name, cpf, phone, password, passwordConfirm }) {
+  return isNameValid(name) && isCPFValid(cpf) && isPhoneValid(phone) && isPasswordValid(password, passwordConfirm)
 }
 
 const isNameValid = name => (

@@ -3,11 +3,11 @@ import './operacoes.js'
 
 export const clients = [
   {
-    nome: 'Test',
+    name: 'Test',
     cpf: '111.111.111-11',
-    celular: '(11) 11111-1111',
-    senha: '111111',
-    conta: 11111,
-    saldo: 0
+    phone: '(11) 11111-1111',
+    password: '111111',
+    account: 11111,
+    balance: 0
   }
 ]
