@@ -1,5 +1,5 @@
-import './cadastro.js'
-import './operacoes.js'
+import './signup.js'
+import './operations.js'
 
 export const clients = [
   {
