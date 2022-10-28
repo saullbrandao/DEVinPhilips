@@ -39,6 +39,7 @@ form.addEventListener('submit', (event) => {
       break
   }
 
+  valueInput.disabled = false
   form.reset()
 })
 
