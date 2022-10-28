@@ -27,10 +27,11 @@
           <input type="text" name="name" id="name" minlength="3" placeholder="Mínimo 3 caracteres" required>
 
           <label for="cpf">CPF</label>
-          <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" maxlength="14" required>
+          <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" minlength="14" maxlength="14" required>
 
           <label for="phone">Celular</label>
-          <input type="text" name="phone" id="phone" placeholder="(00) 00000-0000" maxlength="15" required>
+          <input type="text" name="phone" id="phone" placeholder="(00) 00000-0000" minlength="15" maxlength="15"
+            required>
 
           <label for="password">Senha</label>
           <input type="password" name="password" id="password" minlength="3" placeholder="Mínimo 3 caracteres" required>
@@ -50,6 +51,7 @@
 
           <label for="operation">Operação</label>
           <select name="operation" id="operation">
+            <option selected disabled>Escolha uma operação</option>
             <option value="withdraw">Saque</option>
             <option value="deposit">Depósito</option>
             <option value="balance">Saldo</option>

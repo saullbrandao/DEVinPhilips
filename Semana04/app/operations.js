@@ -37,10 +37,10 @@ form.addEventListener('submit', (event) => {
     case 'balance':
       getBalance(account)
       break
+    default:
+      alert('Escolha uma operação válida')
+      return
   }
-
-  valueInput.disabled = false
-  form.reset()
 })
 
 
