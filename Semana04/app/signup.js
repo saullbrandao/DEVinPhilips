@@ -7,32 +7,21 @@ form.addEventListener('submit', (event) => {
   event.preventDefault()
 
   const formData = new FormData(form)
+  const formProps = Object.fromEntries(formData);
 
-  const name = formData.get('name')
-  const cpf = formData.get('cpf')
-  const phone = formData.get('phone')
-  const password = formData.get('password')
-  const passwordConfirm = formData.get('password-confirm')
-
-  const formElements = {
-    name,
-    cpf,
-    phone,
-    password,
-    passwordConfirm
-  }
-
-  if (!isFormValid(formElements)) {
+  console.log(formProps.phone)
+  if (!isFormValid(formProps)) {
     // TODO: display better error message
     return alert('Formulário inválido.')
   }
 
-  const account = Math.floor(1000 + Math.random() * 90000)
-  const balance = 0
-
-
   const newClient = {
-    name, cpf, phone, password, account, balance
+    name: formProps.name,
+    cpf: formProps.cpf,
+    phone: formProps.phone,
+    password: formProps.password,
+    account: Math.floor(1000 + Math.random() * 90000),
+    balance: 0
   }
 
   clients.push(newClient)
@@ -44,8 +33,8 @@ form.addEventListener('submit', (event) => {
 })
 
 
-function isFormValid({ name, cpf, phone, password, passwordConfirm }) {
-  return isNameValid(name) && isCPFValid(cpf) && isPhoneValid(phone) && isPasswordValid(password, passwordConfirm)
+function isFormValid({ name, cpf, phone, password, passwordConfirmation }) {
+  return isNameValid(name) && isCPFValid(cpf) && isPhoneValid(phone) && isPasswordValid(password, passwordConfirmation)
 }
 
 const isNameValid = name => (
@@ -69,3 +58,45 @@ const isPasswordValid = (password, confirmPassword) => (
   && password.length >= 3
   && password === confirmPassword
 )
+
+
+const cpfInput = document.querySelector('#cpf')
+
+cpfInput.addEventListener('input', cpfMask)
+
+function cpfMask() {
+  let { value } = cpfInput;
+
+  // impede entrar outro caractere que não seja número
+  if (isNaN(value[value.length - 1])) {
+    cpfInput.value = value.substring(0, value.length - 1);
+    return;
+  }
+
+  // adiciona os pontos do cpf
+  if (value.length === 3 || value.length === 7) cpfInput.value += ".";
+
+  // adiciona o hífen
+  if (value.length === 11) cpfInput.value += "-";
+}
+
+const phoneInput = document.querySelector('#phone')
+
+phoneInput.addEventListener('input', phoneMask)
+
+function phoneMask() {
+  let { value } = phoneInput;
+
+  // impede entrar outro caractere que não seja número
+  if (isNaN(value[value.length - 1])) {
+    phoneInput.value = value.substring(0, value.length - 1);
+    return;
+  }
+
+  // adiciona os parenteses do DDD
+  if (value.length === 1) phoneInput.value = `(${value}`;
+  if (value.length === 3) phoneInput.value += ") ";
+
+  // adiciona o hífen
+  if (value.length === 10) phoneInput.value += "-";
+}
