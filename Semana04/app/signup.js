@@ -2,13 +2,13 @@ import { clients } from "./app.js"
 import { CPF_REGEX, PHONE_REGEX } from "./constants.js"
 import { cpfMask, phoneMask } from "./utils.js"
 
-const form = document.querySelector('#signup-form')
+const signupForm = document.querySelector('#signup-form')
 
-form.addEventListener('submit', (event) => {
+signupForm.addEventListener('submit', (event) => {
   event.preventDefault()
 
-  const formData = new FormData(form)
-  const formProps = Object.fromEntries(formData);
+  const formData = new FormData(signupForm)
+  const formProps = Object.fromEntries(formData)
 
   if (!isFormValid(formProps)) {
     return alert('Formulário inválido.')
@@ -28,13 +28,16 @@ form.addEventListener('submit', (event) => {
   localStorage.setItem('clients', JSON.stringify(clients))
   alert(`Conta criada com sucesso: ${newClient.account}`)
 
-  form.reset()
+  signupForm.reset()
 })
 
 
-function isFormValid({ name, cpf, phone, password, passwordConfirmation }) {
-  return isNameValid(name) && isCPFValid(cpf) && isPhoneValid(phone) && isPasswordValid(password, passwordConfirmation)
-}
+const isFormValid = ({ name, cpf, phone, password, passwordConfirmation }) => (
+  isNameValid(name)
+  && isCPFValid(cpf)
+  && isPhoneValid(phone)
+  && isPasswordValid(password, passwordConfirmation)
+)
 
 const isNameValid = name => (
   typeof name === 'string'

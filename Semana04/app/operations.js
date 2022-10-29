@@ -5,7 +5,7 @@ const valueInput = document.querySelector('#value')
 const form = document.querySelector('#operations-form')
 
 operationSelect.addEventListener('change', (event) => {
-  if (event.target.value === 'balance') {
+  if (event.target.value === 'BALANCE') {
     valueInput.value = ''
     valueInput.disabled = true
   } else {
@@ -28,13 +28,13 @@ form.addEventListener('submit', (event) => {
   }
 
   switch (operation) {
-    case 'withdraw':
+    case 'WITHDRAW':
       withdraw({ account, value })
       break
-    case 'deposit':
+    case 'DEPOSIT':
       deposit({ account, value })
       break
-    case 'balance':
+    case 'BALANCE':
       getBalance(account)
       break
     default:
@@ -44,8 +44,8 @@ form.addEventListener('submit', (event) => {
 })
 
 
-function withdraw({ account, value }) {
-  if (value <= 0) {
+const withdraw = ({ account, value }) => {
+  if (!isValueValid(value)) {
     alert('Valor inválido')
     return
   }
@@ -61,8 +61,8 @@ function withdraw({ account, value }) {
   alert(`Saque efetuado com sucesso. Novo saldo: ${client.balance}`)
 }
 
-function deposit({ account, value }) {
-  if (value <= 0) {
+const deposit = ({ account, value }) => {
+  if (!isValueValid(value)) {
     alert('Valor inválido')
     return
   }
@@ -73,7 +73,9 @@ function deposit({ account, value }) {
   alert(`Depósito efetuado com sucesso. Novo saldo: ${client.balance}`)
 }
 
-function getBalance(account) {
+const getBalance = (account) => {
   const client = clients.find(client => client.account === account)
   alert(`Saldo: ${client.balance}`)
 }
+
+const isValueValid = (value) => value > 0
