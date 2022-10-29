@@ -1,17 +1,21 @@
-import { clients } from "./app.js"
-import { CPF_REGEX, PHONE_REGEX } from "./constants.js"
-import { cpfMask, phoneMask } from "./utils.js"
+import { clients } from "./index.js"
+import { CPF_REGEX, PHONE_REGEX } from "./utils/constants.js"
+import { createErrorMessage, removeErrorMessage } from "./components/errorMessage.js"
+import { createModal } from "./components/modal.js"
+import { cpfMask, phoneMask, saveToLocalStorage } from "./utils/utils.js"
 
 const signupForm = document.querySelector('#signup-form')
 
 signupForm.addEventListener('submit', (event) => {
   event.preventDefault()
+  removeErrorMessage(signupForm)
 
   const formData = new FormData(signupForm)
   const formProps = Object.fromEntries(formData)
 
-  if (!isFormValid(formProps)) {
-    return alert('Formulário inválido.')
+  const formValidation = isFormValid(formProps)
+  if (formValidation !== true) {
+    return createErrorMessage(formValidation, signupForm)
   }
 
   const newClient = {
@@ -25,19 +29,21 @@ signupForm.addEventListener('submit', (event) => {
 
   clients.push(newClient)
 
-  localStorage.setItem('clients', JSON.stringify(clients))
-  alert(`Conta criada com sucesso: ${newClient.account}`)
+  saveToLocalStorage(clients)
+
+  createModal(`Conta criada com sucesso: ${newClient.account}`)
 
   signupForm.reset()
 })
 
 
-const isFormValid = ({ name, cpf, phone, password, passwordConfirmation }) => (
-  isNameValid(name)
-  && isCPFValid(cpf)
-  && isPhoneValid(phone)
-  && isPasswordValid(password, passwordConfirmation)
-)
+const isFormValid = ({ name, cpf, phone, password, passwordConfirmation }) => {
+  if (!isNameValid(name)) return 'Nome inválido'
+  if (!isCPFValid(cpf)) return 'CPF inválido'
+  if (!isPhoneValid(phone)) return 'Celular inválido'
+  if (!isPasswordValid(password, passwordConfirmation)) return 'Senha inválida'
+  return true
+}
 
 const isNameValid = name => (
   typeof name === 'string'
@@ -55,10 +61,10 @@ const isPhoneValid = phone => (
   && PHONE_REGEX.test(phone)
 )
 
-const isPasswordValid = (password, confirmPassword) => (
+const isPasswordValid = (password, passwordConfirmation) => (
   typeof password === 'string'
   && password.length >= 3
-  && password === confirmPassword
+  && password === passwordConfirmation
 )
 
 

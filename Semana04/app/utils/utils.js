@@ -30,3 +30,5 @@ export const phoneMask = (input) => {
   // adiciona o hífen
   if (value.length === 10) input.value += "-"
 }
+
+export const saveToLocalStorage = (clients) => localStorage.setItem('clients', JSON.stringify(clients))

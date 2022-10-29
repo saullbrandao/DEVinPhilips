@@ -10,17 +10,17 @@
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 
-    <script src="app.js" type="module"></script>
+    <script src="index.js" type="module"></script>
   </head>
 
   <body>
-    <header>
-      <img id="logo" src="../images/logo.png" alt="logo">
+    <header class="header">
+      <img class="logo" src="../images/logo.png" alt="logo">
       <h1>Conta Bancária</h1>
     </header>
 
-    <main>
-      <form id="signup-form" method="post">
+    <main class="main">
+      <form id="signup-form" class="form" method="post">
         <h2>Criar Conta</h2>
         <label for="name">Nome</label>
         <input type="text" name="name" id="name" minlength="3" placeholder="Mínimo 3 caracteres" required>
@@ -44,7 +44,7 @@
         </div>
       </form>
 
-      <form id="operations-form" method="post">
+      <form id="operations-form" class="form" method="post">
         <h2>Operações</h2>
 
         <label for="operation">Operação</label>
@@ -71,9 +71,9 @@
       </form>
     </main>
 
-    <footer>
+    <footer class="footer">
       <span>Endereço: Rua Lorem ipsum, 999. Lorem - LI.</span>
-      <div id="social-media">
+      <div class="social-media">
         <a href="#">
           <img class="social-logo" src="../images/instagram.png" alt="instagram">
         </a>
