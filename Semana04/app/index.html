@@ -23,24 +23,28 @@
       <form id="signup-form" class="form" method="post">
         <h2>Criar Conta</h2>
         <label for="name">Nome</label>
-        <input type="text" name="name" id="name" minlength="3" placeholder="Mínimo 3 caracteres" required>
+        <input class="form-field" type="text" name="name" id="name" minlength="3" placeholder="Mínimo 3 caracteres"
+          required>
 
         <label for="cpf">CPF</label>
-        <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" minlength="14" maxlength="14" required>
+        <input class="form-field" type="text" name="cpf" id="cpf" placeholder="000.000.000-00" minlength="14"
+          maxlength="14" required>
 
         <label for="phone">Celular</label>
-        <input type="text" name="phone" id="phone" placeholder="(00) 00000-0000" minlength="15" maxlength="15" required>
+        <input class="form-field" type="text" name="phone" id="phone" placeholder="(00) 00000-0000" minlength="15"
+          maxlength="15" required>
 
         <label for="password">Senha</label>
-        <input type="password" name="password" id="password" minlength="3" placeholder="Mínimo 3 caracteres" required>
+        <input class="form-field" type="password" name="password" id="password" minlength="3"
+          placeholder="Mínimo 3 caracteres" required>
 
         <label for="passwordConfirmation">Confirmar Senha</label>
-        <input type="password" name="passwordConfirmation" id="passwordConfirmation" minlength="3"
+        <input class="form-field" type="password" name="passwordConfirmation" id="passwordConfirmation" minlength="3"
           placeholder="Confirme a senha digitada" required>
 
-        <div>
-          <button type="submit">Enviar</button>
-          <button type="reset">Limpar</button>
+        <div class="form-actions">
+          <button class="form-button" type="submit">Enviar</button>
+          <button class="form-button" type="reset">Limpar</button>
         </div>
       </form>
 
@@ -48,7 +52,7 @@
         <h2>Operações</h2>
 
         <label for="operation">Operação</label>
-        <select name="operation" id="operation">
+        <select class="form-field" name="operation" id="operation">
           <option selected disabled>Escolha uma operação</option>
           <option value="WITHDRAW">Saque</option>
           <option value="DEPOSIT">Depósito</option>
@@ -56,23 +60,23 @@
         </select>
 
         <label for="value">Valor</label>
-        <input type="number" name="value" id="value" required>
+        <input class="form-field" type="number" name="value" id="value" required>
 
         <label for="account">Conta</label>
-        <input type="text" name="account" id="account" required>
+        <input class="form-field" type="text" name="account" id="account" required>
 
         <label for="operation-password">Senha</label>
-        <input type="password" name="password" id="operation-password" minlength="3" required>
+        <input class="form-field" type="password" name="password" id="operation-password" minlength="3" required>
 
-        <div>
-          <button type="submit">Enviar</button>
-          <button type="reset">Limpar</button>
+        <div class="form-actions">
+          <button class="form-button" type="submit">Enviar</button>
+          <button class="form-button" type="reset">Limpar</button>
         </div>
       </form>
     </main>
 
     <footer class="footer">
-      <span>Endereço: Rua Lorem ipsum, 999. Lorem - LI.</span>
+      <span>Rua Lorem ipsum, 999. Lorem - LI.</span>
       <div class="social-media">
         <a href="#">
           <img class="social-logo" src="../images/instagram.png" alt="instagram">
