@@ -4,7 +4,7 @@ export const createModal = (modalMessage) => {
   const closeModalButton = document.createElement('button')
   closeModalButton.type = 'button'
   closeModalButton.classList.add('closeModalButton')
-  closeModalButton.innerText = 'X'
+  closeModalButton.innerHTML = `<img src="../images/close.png" alt="close" />`
   closeModalButton.onclick = closeModal
 
   let modalContent = ''
