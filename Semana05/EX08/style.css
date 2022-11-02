@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000111;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: fit-content;
+  padding: 16px;
+  background-color: lightgray;
+  border-radius: 4px;
+}
+
+#button {
+  justify-self: end;
+  align-self: flex-end;
+  padding: 4px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: lightslategray;
+  cursor: pointer;
+}
+
+#button:hover {
+  filter: brightness(1.1);
+}
