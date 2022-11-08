@@ -1,8 +1,14 @@
 const users = []
 
-async function getUsers() {
-  const response = await fetch('https://randomuser.me/api/?results=4')
+async function getUsers(quantity = 4) {
+  if (quantity > 10) {
+    quantity = 10
+  }
+
+  const response = await fetch(`https://randomuser.me/api/?results=${quantity}`)
   const result = await response.json()
+
+  users.length = 0
 
   result.results.forEach(user => {
     const newUser = {
@@ -18,6 +24,8 @@ async function getUsers() {
 
 function displayUsers(users) {
   const ul = document.getElementById('userList')
+
+  ul.replaceChildren()
 
   users.forEach(user => {
     const li = document.createElement('li')
@@ -36,6 +44,11 @@ function displayUsers(users) {
   })
 }
 
-await getUsers()
+const searchButton = document.getElementById('searchButton')
 
-displayUsers(users)
+searchButton.addEventListener('click', async () => {
+  const quantity = Number(document.getElementById('quantity').value)
+
+  await getUsers(quantity)
+  displayUsers(users)
+})
