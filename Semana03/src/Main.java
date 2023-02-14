@@ -13,6 +13,7 @@ public class Main {
         System.out.println(clinica.getClientes());
 
         System.out.println(clinica.tratamento(cliente));
+        System.out.println(clinica.tratamento(cliente, 10d));
         System.out.println(clinica.tratamento(cliente2));
     }
 }
