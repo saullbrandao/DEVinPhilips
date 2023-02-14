@@ -47,6 +47,17 @@ public class Clinica {
         }
     }
 
+    public Double tratamento(Cliente cliente) {
+        int index = this.clientes.indexOf(cliente);
+        if(index == -1) {
+            System.out.println("Cliente não identificado");
+            return null;
+        }
+
+        this.clientes.get(index).setPeso(cliente.getPeso() - 5);
+        return cliente.getPeso();
+    }
+
     public String getNome() {
         return nome;
     }
