@@ -8,7 +8,7 @@ public class Main {
         System.out.println(imc);
 
 //        Clientes
-        clinica.clientes.add(cliente);
-        System.out.println(clinica.clientes);
+        clinica.addCliente(cliente);
+        System.out.println(clinica.getClientes());
     }
 }
