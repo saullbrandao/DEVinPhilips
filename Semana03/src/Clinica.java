@@ -9,6 +9,16 @@ public class Clinica {
     private Integer codigo;
     private final List<Cliente> clientes = new ArrayList<>();
 
+    public Clinica(String dono) {
+        this.dono = dono;
+
+    }
+
+    public Clinica( String dono, List<Cliente> clientes) {
+        this.dono = dono;
+        this.clientes.addAll(clientes);
+    }
+
     public Clinica(String nome, String dono, String CNPJ, String logradouro, Integer codigo) {
         this.nome = nome;
         this.dono = dono;
