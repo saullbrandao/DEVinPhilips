@@ -1,9 +1,13 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Clinica {
     String nome;
     String dono;
     String CNPJ;
     String logradouro;
     Integer codigo;
+    List<Cliente> clientes = new ArrayList<>();
 
     public Clinica(String nome, String dono, String CNPJ, String logradouro, Integer codigo) {
         this.nome = nome;
