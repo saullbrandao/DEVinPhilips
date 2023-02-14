@@ -2,15 +2,17 @@ public class Cliente {
     private Double peso;
     private Double altura;
     private Integer idade;
+    private String nome;
 
     public Cliente(Double peso, Double altura) {
         this.peso = peso;
         this.altura = altura;
     }
-    public Cliente(Double peso, Double altura, Integer idade) {
+    public Cliente(Double peso, Double altura, Integer idade, String nome) {
         this.peso = peso;
         this.altura = altura;
         this.idade = idade;
+        this.nome = nome;
     }
 
     public Double getPeso() {
@@ -35,5 +37,23 @@ public class Cliente {
 
     public void setIdade(Integer idade) {
         this.idade = idade;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "peso=" + peso +
+                ", altura=" + altura +
+                ", idade=" + idade +
+                ", nome='" + nome + '\'' +
+                '}';
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }
