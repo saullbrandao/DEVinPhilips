@@ -1,0 +1,34 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  padding: 10px;
+}
+
+#userList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.list-item {
+  display: flex;
+}
+
+.list-item > img {
+  width: 120px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #7fffd4;
+  padding-left: 10px;
+  flex: 1;
+}
