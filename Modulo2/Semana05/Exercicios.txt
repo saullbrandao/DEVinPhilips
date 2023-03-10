@@ -1,0 +1,21 @@
+Ex08 - Defina as primeiras 3 formas de normalização, com exemplos.
+
+R: Primeira forma normal - não haver grupos de dados repetidos.
+Exemplo: uma tabela Curso com o atributo professores cadastrado. Um curso pode ter varios professores, então a solução seria criar uma tabela para professores e outra para relacionar professores com cursos.
+
+Segunda forma normal - todo atributo deve depender da chave inteira. 
+Exemplo: uma tabela Matricula com os atributos codigoAluno(PK), codigoDisciplina(PK), nomeAluno, nomeDisciplina e notaFinal. Os atributos de nome dependem apenas de sua respectiva chave primária. A solução seria criar tabelas separadas para Aluno e Disciplina com identificador e nome. Na tabela de Matricula usar apenas codigoALuno(FK), codigoDisciplina(FK) e notaFinal.
+
+Terceira forma normal - todo atributo deve depender apenas da chave. 
+Exemplo: uma tabela Funcionario com os atributos identificador(PK), nome, cargo, salarioBase, gratificacao. O atributo salarioBase depende do cargo. A solução seria criar uma tabela Cargo, mover o salarioBase para ela e usar uma chave estrangeira na tabela de Funcionario.
+
+
+Ex09 - Defina modelagem conceitual de dados.
+
+R: É a primeira etapa da modelagem de dados, onde se define a estruturação dos dados de forma abstrata.
+
+
+Ex10 - Quais são os tipos de bancos de dados e defina quais são os SGBDs.
+
+R: Os tipos de bancos de dados são os relacionais, que estruturam os dados em tabelas, podendo haver ou não relacionamento entra elas, e os não relacionais, que são menos estruturados. 
+Já SGBDs são os sistemas que permitem gerenciar o banco de dados.
