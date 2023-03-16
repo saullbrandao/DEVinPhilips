@@ -18,13 +18,16 @@ INSERT INTO professores (nome, sobrenome, endereco, email, telefone, data_nascim
 VALUES ('Elisa', 'Duarte', 'Rua do Comércio, 123', 'elisa@test.com', '11966664444', '02/AUG/1986', 'brasileiro');
 
 INSERT INTO cursos (codigo, nome, professor_id, max_alunos, ead) 
-VALUES ('123abc', 'Java', 1, 50, '1');
+VALUES ('123abc', 'Java', 1, 50, '0');
 
 INSERT INTO cursos (codigo, nome, professor_id, max_alunos, ead) 
-VALUES ('456abc', 'Angular', 1, 50, '2');
+VALUES ('456abc', 'Angular', 2, 50, '0');
 
 INSERT INTO cursos (codigo, nome, professor_id, max_alunos, ead) 
-VALUES ('789abc', 'SQL', 1, 50, '3');
+VALUES ('789abc', 'SQL', 3, 50, '0');
+
+INSERT INTO cursos (codigo, nome, professor_id, max_alunos, ead) 
+VALUES ('789abc', 'Spring', 3, 50, '0');
 
 INSERT INTO matricula(aluno_id, curso_id, media_aluno)
 VALUES(1,1,9);
