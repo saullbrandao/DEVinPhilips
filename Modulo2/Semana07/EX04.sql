@@ -8,14 +8,14 @@ INSERT INTO estudantes (nome, sobrenome, matricula, email, data_nascimento, naci
 VALUES ('Rosa', 'Moreira', 'abc789', 'rosa@test.com', '14/DEC/1996', 'brasileiro', 0);
 
 
-INSERT INTO professores (nome, sobrenome, endereco, email, telefone, data_nascimento, nacionalidade) 
-VALUES ('Mario', 'Ribeiro', 'Quadra SQS 305 Bloco B, 579', 'mario@test.com', '11988887777', '28/JAN/1980', 'brasileiro');
+INSERT INTO professores (nome, sobrenome, endereco, email, telefone, data_nascimento, nacionalidade, genero) 
+VALUES ('Mario', 'Ribeiro', 'Quadra SQS 305 Bloco B, 579', 'mario@test.com', '11988887777', '28/JAN/1980', 'brasileiro', 'masculino');
 
-INSERT INTO professores (nome, sobrenome, endereco, email, telefone, data_nascimento, nacionalidade) 
-VALUES ('Joao', 'Barbosa', 'Rua Doutor Fernandes Lima, 714', 'joaobarbosa@test.com', '11955557777', '13/MAY/1975', 'brasileiro');
+INSERT INTO professores (nome, sobrenome, endereco, email, telefone, data_nascimento, nacionalidade, genero) 
+VALUES ('Joao', 'Barbosa', 'Rua Doutor Fernandes Lima, 714', 'joaobarbosa@test.com', '11955557777', '13/MAY/1975', 'brasileiro', 'masculino');
 
-INSERT INTO professores (nome, sobrenome, endereco, email, telefone, data_nascimento, nacionalidade) 
-VALUES ('Elisa', 'Duarte', 'Rua do Comércio, 123', 'elisa@test.com', '11966664444', '02/AUG/1986', 'brasileiro');
+INSERT INTO professores (nome, sobrenome, endereco, email, telefone, data_nascimento, nacionalidade, genero) 
+VALUES ('Elisa', 'Duarte', 'Rua do Comércio, 123', 'elisa@test.com', '11966664444', '02/AUG/1986', 'brasileiro', 'feminino');
 
 INSERT INTO cursos (codigo, nome, professor_id, max_alunos, ead) 
 VALUES ('123abc', 'Java', 1, 50, '0');
