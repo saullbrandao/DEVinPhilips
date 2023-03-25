@@ -47,10 +47,10 @@ public class ContaController {
     }
 
     @PutMapping
-    public Boolean addToSaldo(@RequestBody Map<String, Object> body) {
+    public void addToSaldo(@RequestBody Map<String, Object> body) {
         Integer conta_id = (Integer) body.get("conta_id");
         BigDecimal valor = BigDecimal.valueOf((Double) body.get("valor"));
-        return contaService.addToSaldo(conta_id, valor);
+        contaService.addToSaldo(conta_id, valor);
     }
 
     @PutMapping("/transfere")

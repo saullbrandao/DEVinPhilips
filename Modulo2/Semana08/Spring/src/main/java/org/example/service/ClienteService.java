@@ -3,6 +3,7 @@ package org.example.service;
 import org.example.model.Cliente;
 import org.example.repository.ClienteRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ServerErrorException;
 
 import java.util.List;
 
@@ -15,7 +16,11 @@ public class ClienteService {
     }
 
     public Boolean createCliente(Cliente cliente){
+        try {
             return clienteRepository.saveCliente(cliente);
+        } catch (Exception e) {
+            throw new ServerErrorException("ClienteService", e);
+        }
     }
 
     public List<Cliente> listClientes(){
@@ -23,7 +28,11 @@ public class ClienteService {
     }
 
     public Cliente findClienteById(Integer id){
+        try {
             return clienteRepository.findClienteById(id);
+        } catch (Exception e) {
+            throw new ServerErrorException("ClienteService", e);
+        }
     }
 
     public Boolean deleteClienteById(Integer id){
@@ -31,6 +40,10 @@ public class ClienteService {
     }
 
     public void updateClienteById(Integer id, Cliente cliente){
+        try {
         clienteRepository.updateClienteById(id, cliente);
+        } catch (Exception e) {
+            throw new ServerErrorException("ClienteService", e);
+        }
     }
 }
