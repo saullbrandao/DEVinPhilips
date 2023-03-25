@@ -15,5 +15,5 @@ public class Conta {
     private Cliente cliente;
 
     @NotNull
-    private BigDecimal saldo;
+    private BigDecimal saldo = BigDecimal.valueOf(0.00);
 }

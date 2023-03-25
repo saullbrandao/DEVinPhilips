@@ -32,10 +32,6 @@ public class ContaService {
         return contaRepository.deleteContaById(id);
     }
 
-    public void updateContaById(Integer id, Conta conta) {
-        contaRepository.updateContaById(id, conta);
-    }
-
     public void addToSaldo(Integer id, BigDecimal value) {
         contaRepository.addToSaldo(id, value);
     }

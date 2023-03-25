@@ -23,10 +23,6 @@ public class ContaRepository {
         return contaList.remove(findContaById(id));
     }
 
-    public void updateContaById(Integer id, Conta conta){
-        contaList.set(id,conta);
-    }
-
     public Conta findContaById(Integer id){
         return contaList.get(id);
     }
