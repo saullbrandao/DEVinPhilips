@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ContaService {
@@ -32,7 +33,11 @@ public class ContaService {
         return contaRepository.deleteContaById(id);
     }
 
-    public void addToSaldo(Integer id, BigDecimal value) {
-        contaRepository.addToSaldo(id, value);
+    public Boolean addToSaldo(Integer id, BigDecimal value) {
+        return contaRepository.addToSaldo(id, value);
+    }
+
+    public Map<String, Object> transferir(Integer from_id, Integer to_id, BigDecimal value) {
+        return contaRepository.transferir(from_id, to_id, value);
     }
 }
