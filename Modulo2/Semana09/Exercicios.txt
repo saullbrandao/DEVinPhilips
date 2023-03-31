@@ -4,3 +4,7 @@ R: JDBC é uma API do java usada para conectar aplicações Java com bancos de d
 JPA é uma especificação para padronizar o mapeamento objeto-relacional(ORM) entre classes de Java e tabelas de um banco de dados.
 Hibernate é um framework de mapeamento objeto-relacional que implementa as especificações do JPA.
 Spring Data é um projeto do Spring, construído em cima do Hibernate e outros ORMs, que provê uma forma mais simples de acessar bancos de dados.
+
+EX 04 - Em poucas palavras explique o que é o Padrão DTO e como utilizá-lo da maneira correta.
+
+R: O DTO é um padrão de projeto que serve para agregar dados para transferência entre camadas de um sistema. Ele deve possuir apenas os atributos que descrevem os dados que serão transferidos.
