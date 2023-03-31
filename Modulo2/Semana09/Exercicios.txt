@@ -1,0 +1,6 @@
+Ex 01 - Diferença entre JDBC, JPA e Hibernate/Spring Data.
+
+R: JDBC é uma API do java usada para conectar aplicações Java com bancos de dados.
+JPA é uma especificação para padronizar o mapeamento objeto-relacional(ORM) entre classes de Java e tabelas de um banco de dados.
+Hibernate é um framework de mapeamento objeto-relacional que implementa as especificações do JPA.
+Spring Data é um projeto do Spring, construído em cima do Hibernate e outros ORMs, que provê uma forma mais simples de acessar bancos de dados.
