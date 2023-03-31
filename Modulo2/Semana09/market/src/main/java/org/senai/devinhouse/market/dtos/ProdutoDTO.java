@@ -5,6 +5,7 @@ public class ProdutoDTO {
     private String nome;
     private String descricao;
     private Double preco;
+    private CategoriaDTO categoria;
 
     public Long getId() {
         return id;
@@ -36,5 +37,13 @@ public class ProdutoDTO {
 
     public void setPreco(Double preco) {
         this.preco = preco;
+    }
+
+    public CategoriaDTO getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(CategoriaDTO categoria) {
+        this.categoria = categoria;
     }
 }

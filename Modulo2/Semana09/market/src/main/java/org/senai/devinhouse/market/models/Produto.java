@@ -15,6 +15,9 @@ public class Produto {
     private String descricao;
     private Double preco;
 
+    @ManyToOne
+    private Categoria categoria;
+
     @ManyToMany
     @JoinTable(name = "produto_cliente", joinColumns = @JoinColumn(name = "produto_id"), inverseJoinColumns = @JoinColumn(name = "cliente_id"))
     private List<Cliente> clientes = new ArrayList<>();
@@ -49,6 +52,14 @@ public class Produto {
 
     public void setPreco(Double preco) {
         this.preco = preco;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     public List<Cliente> getClientes() {
