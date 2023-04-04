@@ -1,0 +1,29 @@
+package org.senai.devinhouse.devinphilips.models;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.sql.Date;
+
+@Entity
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Table(name = "produtos")
+public class Produto {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nome;
+
+    private String descricao;
+
+    @Column(name = "data_lancamento")
+    private Date dataLancamento;
+
+    private Double preco;
+}

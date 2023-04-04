@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Produtos</title>
+    <title>Produto</title>
 </head>
 <body>
-    <h1>Nome produto</h1>
-    <p>Descrição produto</p>
-    <p>Data de Lançamento: 01/01/2023</p>
-    <p>Preço: R$10,00</p>
+    <h1 th:text="${produto.nome}"></h1>
+    <p>
+        Descrição: <span th:text="${produto.descricao}"></span>
+    </p>
+    <p>
+        Data de Lançamento: <span th:text="${produto.dataLancamento}"></span>
+    </p>
+    <p>
+        Preço: R$<span th:text="${produto.preco}"></span>
+    </p>
 </body>
 </html>
