@@ -23,7 +23,7 @@ public class Produto {
     private String descricao;
 
     @Column(name = "data_lancamento")
-    private Date dataLancamento;
+    private String dataLancamento;
 
     private Double preco;
 }
