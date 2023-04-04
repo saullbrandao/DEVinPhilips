@@ -1,0 +1,6 @@
+#FileLock
+#Tue Apr 04 14:18:56 BRT 2023
+server=10.0.0.4\:39507
+hostName=archlinux
+method=file
+id=1874d475f968c71f0c42725ec76aec1cab869c58b02
