@@ -5,12 +5,17 @@
     <title>Lista dos Produtos</title>
 </head>
 <body>
-  <h1>Produtos</h1>
+<div>
+    <h1>Produtos</h1>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>
+</div>
 
-  <div th:each="produto: ${produtos}">
-      <div th:text="${produto.nome}"></div>
-      <div th:text="${produto.preco}"></div>
-      <a th:href="@{/produto/delete/{id}(id=${produto.id})}">Deletar</a>
-  </div>
+<div th:each="produto: ${produtos}">
+    <div th:text="${produto.nome}"></div>
+    <div th:text="${produto.preco}"></div>
+    <a th:href="@{/produto/delete/{id}(id=${produto.id})}">Deletar</a>
+</div>
 </body>
 </html>
