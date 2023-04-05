@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -24,7 +25,7 @@ public class ProdutoController {
 
     @GetMapping
     @RequestMapping("/new")
-    public String newProdutoPage(Model model, Produto produto) {
+    public String newProdutoForm(Model model, Produto produto) {
         return "createProduto";
     }
 
@@ -37,6 +38,11 @@ public class ProdutoController {
         return "listProdutos";
     }
 
+
+    @GetMapping("/update")
+    public String updateProdutoForm(Produto produto, Model model){
+        return "updateProduto";
+    }
 
     @GetMapping
     public String showProduto(Model model) {
@@ -58,6 +64,21 @@ public class ProdutoController {
     public String createProduto(Model model, @Validated Produto produto){
         produtoService.addProduto(produto);
 
-        return "redirect:produto/all";
+        return "redirect:/produto/all";
     }
+
+    @PostMapping("/update")
+    public String updateProduto(@Validated Produto produto) {
+        produtoService.updateProduto(produto);
+
+        return "redirect:/produto/all";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteProduto(@PathVariable Long id) {
+        produtoService.deleteProdutoById(id);
+
+        return "redirect:/produto/all";
+    }
+
 }

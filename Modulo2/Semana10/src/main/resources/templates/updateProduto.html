@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar Produto</title>
+</head>
+<body>
+<form action="#"
+      th:action="@{/produto/update}"
+      th:object="${produto}"
+      method="post">
+    <label for="id" >ID</label>
+    <input type="text" th:field="*{id}"  id="id" placeholder="ID">
+    <label for="name" >Name</label>
+    <input type="text" th:field="*{nome}"  id="name" placeholder="Name">
+    <label for="descricao" >Descrição</label>
+    <input type="text" th:field="*{descricao}"  id="descricao" placeholder="Descrição">
+    <label for="dataLancamento" >Data de Lançamento</label>
+    <input type="text" th:field="*{dataLancamento}"  id="dataLancamento" placeholder="Data de Lançamento">
+    <label for="preco" >Preço</label>
+    <input type="text" th:field="*{preco}"  id="preco" placeholder="Preço">
+
+
+    <input type="submit" value="Add Produto">
+
+</form>
+</body>
+</html>

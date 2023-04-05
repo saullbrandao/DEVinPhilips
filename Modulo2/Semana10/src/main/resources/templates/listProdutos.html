@@ -10,6 +10,7 @@
   <div th:each="produto: ${produtos}">
       <div th:text="${produto.nome}"></div>
       <div th:text="${produto.preco}"></div>
+      <a th:href="@{/produto/delete/{id}(id=${produto.id})}">Deletar</a>
   </div>
 </body>
 </html>

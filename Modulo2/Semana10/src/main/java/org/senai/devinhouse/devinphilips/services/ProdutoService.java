@@ -18,6 +18,14 @@ public class ProdutoService {
         produtoRepository.save(produto);
     }
 
+    public void updateProduto(Produto produto) {
+        produtoRepository.save(produto);
+    }
+
+    public void deleteProdutoById(Long id) {
+        produtoRepository.deleteById(id);
+    }
+
     public List<Produto> findAll() {
         return produtoRepository.findAll();
     }
