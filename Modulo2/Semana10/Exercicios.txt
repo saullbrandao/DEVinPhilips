@@ -1,0 +1,14 @@
+EX8 - Defina JWT.
+
+R: JWT é um padrão para criação de tokens de autenticação em JSON, composto por cabeçalho, payload e assinatura.
+
+Uma requisição que utiliza JWT funciona da seguinte forma:
+
+- O cliente faz uma requisição para o servidor, enviando suas credenciais (como email e senha).
+- O servidor autentica o cliente e gera um token JWT, contendo as informações necessárias para identificar o cliente.
+- O servidor envia o token JWT para o cliente.
+- O cliente armazena o token JWT em um cookie ou no armazenamento local.
+- Em cada nova requisição para o servidor, o cliente inclui o token JWT no cabeçalho da requisição.
+- O servidor verifica a autenticidade do token JWT e autoriza ou nega a requisição com base nas informações contidas no token.
+
+Exemplo de JWT: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
