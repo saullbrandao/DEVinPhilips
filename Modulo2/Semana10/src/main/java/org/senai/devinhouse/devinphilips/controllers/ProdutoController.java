@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.sql.Date;
-import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -32,6 +30,7 @@ public class ProdutoController {
     @GetMapping
     @RequestMapping("/all")
     public String showAllProducts(Model model) {
+
         List<Produto> produtos = produtoService.findAll();
 
         model.addAttribute("produtos", produtos);

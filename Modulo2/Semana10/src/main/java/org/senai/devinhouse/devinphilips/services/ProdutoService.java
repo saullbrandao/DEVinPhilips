@@ -1,6 +1,7 @@
 package org.senai.devinhouse.devinphilips.services;
 
 import org.senai.devinhouse.devinphilips.models.Produto;
+import org.senai.devinhouse.devinphilips.models.Usuario;
 import org.senai.devinhouse.devinphilips.repositories.ProdutoRepository;
 import org.springframework.stereotype.Service;
 
