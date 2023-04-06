@@ -3,8 +3,6 @@ package org.senai.devinhouse.devinphilips.models;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.sql.Date;
-
 @Entity
 @Getter
 @Setter
