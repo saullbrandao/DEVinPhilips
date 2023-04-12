@@ -1,0 +1,27 @@
+package com.example.m2s11.services;
+
+import com.example.m2s11.dtos.QuestionDTO;
+import com.example.m2s11.mappers.QuestionMapper;
+import com.example.m2s11.repositories.QuestionRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class QuestionService {
+    private final QuestionRepository questionRepository;
+    private final QuestionMapper questionMapper;
+
+    public QuestionService(QuestionRepository questionRepository, QuestionMapper questionMapper) {
+        this.questionRepository = questionRepository;
+        this.questionMapper = questionMapper;
+    }
+
+    public List<QuestionDTO> findAll() {
+        return questionMapper.map(questionRepository.findAll());
+    }
+
+    public QuestionDTO findById(Integer id) {
+        return questionMapper.map(questionRepository.findById(id));
+    }
+}
