@@ -2,6 +2,7 @@ package com.example.m2s11.services;
 
 import com.example.m2s11.dtos.AnswerDTO;
 import com.example.m2s11.mappers.AnswerMapper;
+import com.example.m2s11.models.Answer;
 import com.example.m2s11.repositories.AnswerRepository;
 import org.springframework.stereotype.Service;
 
@@ -32,5 +33,11 @@ public class AnswerService {
 
     private List<AnswerDTO> findAllByQuestionId(Integer questionId) {
         return answerMapper.map(answerRepository.findAllByQuestionId(questionId));
+    }
+
+    public void create(AnswerDTO answerDTO) {
+        Answer answer = answerMapper.map(answerDTO);
+
+        answerRepository.save(answer);
     }
 }

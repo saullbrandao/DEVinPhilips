@@ -2,10 +2,7 @@ package com.example.m2s11.controllers;
 
 import com.example.m2s11.dtos.QuizDTO;
 import com.example.m2s11.services.QuizService;
-import jakarta.websocket.server.PathParam;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,7 +22,12 @@ public class QuizController {
 
     @GetMapping
     @RequestMapping("/{id}")
-    public QuizDTO getById(@PathParam("id") Integer id) {
+    public QuizDTO getById(@PathVariable("id") Integer id) {
         return quizService.findById(id);
+    }
+
+    @PostMapping
+    public void create(@RequestBody QuizDTO quizDTO) {
+        quizService.create(quizDTO);
     }
 }

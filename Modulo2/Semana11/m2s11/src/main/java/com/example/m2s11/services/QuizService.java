@@ -2,6 +2,7 @@ package com.example.m2s11.services;
 
 import com.example.m2s11.dtos.QuizDTO;
 import com.example.m2s11.mappers.QuizMapper;
+import com.example.m2s11.models.Quiz;
 import com.example.m2s11.repositories.QuizRepository;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +24,11 @@ public class QuizService {
 
     public QuizDTO findById(Integer id) {
         return quizMapper.map(quizRepository.findById(id));
+    }
+
+    public void create(QuizDTO quizDTO) {
+        Quiz quiz = quizMapper.map(quizDTO);
+
+        quizRepository.save(quiz);
     }
 }
