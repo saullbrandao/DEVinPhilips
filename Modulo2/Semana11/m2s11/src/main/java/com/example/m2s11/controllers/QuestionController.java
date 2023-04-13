@@ -5,6 +5,7 @@ import com.example.m2s11.services.QuestionService;
 import jakarta.websocket.server.PathParam;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -19,8 +20,8 @@ public class QuestionController {
     }
 
     @GetMapping
-    public List<QuestionDTO> getAll() {
-        return questionService.findAll();
+    public List<QuestionDTO> getAll(@RequestParam(required = false, name = "quiz") Integer quizId) {
+        return questionService.findAll(quizId);
     }
 
     @GetMapping

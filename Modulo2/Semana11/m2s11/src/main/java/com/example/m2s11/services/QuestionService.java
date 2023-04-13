@@ -17,11 +17,20 @@ public class QuestionService {
         this.questionMapper = questionMapper;
     }
 
-    public List<QuestionDTO> findAll() {
+    public List<QuestionDTO> findAll(Integer quizId) {
+        System.out.println(quizId);
+        if(quizId != null) {
+            return findAllByQuizId(quizId);
+        }
+
         return questionMapper.map(questionRepository.findAll());
     }
 
     public QuestionDTO findById(Integer id) {
         return questionMapper.map(questionRepository.findById(id));
+    }
+
+    private List<QuestionDTO> findAllByQuizId(Integer id) {
+        return questionMapper.map(questionRepository.findAllByQuizId(id));
     }
 }

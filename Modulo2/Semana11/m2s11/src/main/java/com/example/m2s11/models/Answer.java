@@ -16,6 +16,6 @@ public class Answer {
 
     private String text;
 
-    @OneToOne
+    @ManyToOne
     private Question question;
 }
