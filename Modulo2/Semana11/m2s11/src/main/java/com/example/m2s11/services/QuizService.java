@@ -35,4 +35,8 @@ public class QuizService {
     public void update(Quiz quiz) {
         quizRepository.save(quiz);
     }
+
+    public void delete(Long id) {
+        quizRepository.deleteById(id);
+    }
 }

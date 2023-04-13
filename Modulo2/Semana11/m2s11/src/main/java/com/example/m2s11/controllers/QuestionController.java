@@ -22,8 +22,7 @@ public class QuestionController {
         return questionService.findAll(quizId);
     }
 
-    @GetMapping
-    @RequestMapping("/{id}")
+    @GetMapping("/{id}")
     public QuestionDTO getById(@PathVariable("id") Integer id) {
         return questionService.findById(id);
     }
@@ -36,5 +35,10 @@ public class QuestionController {
     @PutMapping
     public void update(@RequestBody Question question) {
         questionService.update(question);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Long id) {
+        questionService.delete(id);
     }
 }

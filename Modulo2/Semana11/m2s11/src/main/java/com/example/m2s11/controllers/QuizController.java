@@ -22,8 +22,7 @@ public class QuizController {
         return quizService.findAll();
     }
 
-    @GetMapping
-    @RequestMapping("/{id}")
+    @GetMapping("/{id}")
     public QuizDTO getById(@PathVariable("id") Integer id) {
         return quizService.findById(id);
     }
@@ -37,4 +36,10 @@ public class QuizController {
     public void update(@Valid @RequestBody Quiz quiz) {
         quizService.update(quiz);
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Long id) {
+        quizService.delete(id);
+    }
+
 }

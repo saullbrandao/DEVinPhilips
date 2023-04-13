@@ -44,4 +44,8 @@ public class AnswerService {
         System.out.println(answer);
         answerRepository.save(answer);
     }
+
+    public void delete(Long id) {
+        answerRepository.deleteById(id);
+    }
 }

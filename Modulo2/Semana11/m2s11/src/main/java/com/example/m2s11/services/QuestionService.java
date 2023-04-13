@@ -42,4 +42,8 @@ public class QuestionService {
     public void update(Question question) {
         questionRepository.save(question);
     }
+
+    public void delete(Long id) {
+        questionRepository.deleteById(id);
+    }
 }
