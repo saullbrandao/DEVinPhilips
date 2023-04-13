@@ -35,10 +35,11 @@ public class QuestionService {
     }
 
     public void create(QuestionDTO questionDTO) {
-        System.out.println(questionDTO);
         Question question = questionMapper.map(questionDTO);
-        System.out.println(question);
+        questionRepository.save(question);
+    }
 
+    public void update(Question question) {
         questionRepository.save(question);
     }
 }

@@ -1,7 +1,9 @@
 package com.example.m2s11.controllers;
 
 import com.example.m2s11.dtos.QuestionDTO;
+import com.example.m2s11.models.Question;
 import com.example.m2s11.services.QuestionService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,7 +29,12 @@ public class QuestionController {
     }
 
     @PostMapping
-    public void create(@RequestBody QuestionDTO questionDTO) {
+    public void create(@Valid @RequestBody QuestionDTO questionDTO) {
         questionService.create(questionDTO);
+    }
+
+    @PutMapping
+    public void update(@RequestBody Question question) {
+        questionService.update(question);
     }
 }

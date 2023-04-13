@@ -31,4 +31,8 @@ public class QuizService {
 
         quizRepository.save(quiz);
     }
+
+    public void update(Quiz quiz) {
+        quizRepository.save(quiz);
+    }
 }

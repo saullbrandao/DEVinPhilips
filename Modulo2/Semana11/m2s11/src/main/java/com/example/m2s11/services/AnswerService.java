@@ -7,7 +7,6 @@ import com.example.m2s11.repositories.AnswerRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AnswerService {
@@ -38,6 +37,11 @@ public class AnswerService {
     public void create(AnswerDTO answerDTO) {
         Answer answer = answerMapper.map(answerDTO);
 
+        answerRepository.save(answer);
+    }
+
+    public void update(Answer answer) {
+        System.out.println(answer);
         answerRepository.save(answer);
     }
 }
