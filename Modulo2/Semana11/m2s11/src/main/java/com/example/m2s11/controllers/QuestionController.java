@@ -4,8 +4,11 @@ import com.example.m2s11.dtos.QuestionDTO;
 import com.example.m2s11.models.Question;
 import com.example.m2s11.services.QuestionService;
 import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -23,18 +26,22 @@ public class QuestionController {
     }
 
     @GetMapping("/{id}")
-    public QuestionDTO getById(@PathVariable("id") Integer id) {
+    public QuestionDTO getById(@PathVariable("id") Long id) {
         return questionService.findById(id);
     }
 
     @PostMapping
-    public void create(@Valid @RequestBody QuestionDTO questionDTO) {
-        questionService.create(questionDTO);
+    public ResponseEntity<Question> create(@Valid @RequestBody QuestionDTO questionDTO, UriComponentsBuilder uriComponentsBuilder) {
+        Question question = questionService.create(questionDTO);
+        URI uri = uriComponentsBuilder.path("/questions/{id}").buildAndExpand(question.getId()).toUri();
+
+        return ResponseEntity.created(uri).body(question);
     }
 
     @PutMapping
-    public void update(@RequestBody Question question) {
+    public ResponseEntity<Void> update(@RequestBody Question question) {
         questionService.update(question);
+        return  ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/{id}")

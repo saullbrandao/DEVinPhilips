@@ -4,8 +4,11 @@ import com.example.m2s11.dtos.QuizDTO;
 import com.example.m2s11.models.Quiz;
 import com.example.m2s11.services.QuizService;
 import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -23,18 +26,22 @@ public class QuizController {
     }
 
     @GetMapping("/{id}")
-    public QuizDTO getById(@PathVariable("id") Integer id) {
+    public QuizDTO getById(@PathVariable("id") Long id) {
         return quizService.findById(id);
     }
 
     @PostMapping
-    public void create(@Valid @RequestBody QuizDTO quizDTO) {
-        quizService.create(quizDTO);
+    public ResponseEntity<Quiz> create(@Valid @RequestBody QuizDTO quizDTO, UriComponentsBuilder uriComponentsBuilder) {
+        Quiz quiz = quizService.create(quizDTO);
+        URI uri = uriComponentsBuilder.path("/quizzes/{id}").buildAndExpand(quiz.getId()).toUri();
+
+        return ResponseEntity.created(uri).body(quiz);
     }
 
     @PutMapping
-    public void update(@Valid @RequestBody Quiz quiz) {
+    public ResponseEntity<Void> update(@Valid @RequestBody Quiz quiz) {
         quizService.update(quiz);
+        return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/{id}")
