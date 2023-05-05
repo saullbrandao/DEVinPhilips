@@ -3,6 +3,7 @@ package tech.devinhouse.veiculos.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Veiculo {
     @Id
     private String placa;
