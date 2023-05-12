@@ -12,7 +12,8 @@ import { NOTIFICATIONS_MOCK } from 'src/app/utils/notifications-mock';
 export class ContentComponent implements OnInit {
   listaDeNotificacoes: INotificacao[] = [];
 
-  notifications$: Observable<INotificacao[]> = this.notificationService.getNotifications();
+  notifications$: Observable<INotificacao[]> =
+    this.notificationService.getNotifications();
 
   constructor(private notificationService: NotificationService) {}
 
@@ -23,8 +24,8 @@ export class ContentComponent implements OnInit {
   lerNotificacao(notificacao: INotificacao) {
     notificacao = {
       ...notificacao,
-      lido: true
-    }
+      lido: true,
+    };
 
     this.notificationService
       .editNotificationApi(notificacao)
@@ -36,7 +37,7 @@ export class ContentComponent implements OnInit {
   }
 
   carregarNotificacoes() {
- // this.listaDeNotificacoes = NOTIFICATIONS_MOCK;
+    // this.listaDeNotificacoes = NOTIFICATIONS_MOCK;
 
     // Chamada com async await promise
     // const lista = await this.notificationService.getNotificationsApi().toPromise();
@@ -44,19 +45,17 @@ export class ContentComponent implements OnInit {
 
     // Chamada com observable
     this.notificationService
-      .getNotificationsApi()
+      .getNotifications()
       .subscribe((resposta: INotificacao[]) => {
-        this.listaDeNotificacoes = resposta
+        this.listaDeNotificacoes = resposta;
       });
   }
 
   removerNotificacao(id?: number) {
     if (id) {
-      this.notificationService
-        .removeNotification(id)
-        .subscribe(() => {
-          this.atualizarLista();
-        });
+      this.notificationService.removeNotification(id).subscribe(() => {
+        this.atualizarLista();
+      });
     }
   }
 }

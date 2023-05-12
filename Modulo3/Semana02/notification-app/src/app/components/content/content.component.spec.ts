@@ -3,6 +3,7 @@ import { ContentComponent } from './content.component';
 import { NotificationService } from 'src/app/services/notification.service';
 import { AppModule } from 'src/app/app.module';
 import { of } from 'rxjs';
+import { NOTIFICATIONS_MOCK } from 'src/app/utils/notifications-mock';
 
 describe('ContentComponent', () => {
   let fixture: ComponentFixture<ContentComponent>;
@@ -62,5 +63,16 @@ describe('ContentComponent', () => {
     spyOn(component, 'carregarNotificacoes');
     component.atualizarLista();
     expect(component.carregarNotificacoes).toHaveBeenCalled();
+  });
+
+  it('carregarNotificacoes - Should return values to listaDeNotificacoes with success', () => {
+    notificationService.getNotifications.and.returnValue(
+      of(NOTIFICATIONS_MOCK)
+    );
+
+    component.carregarNotificacoes();
+
+    expect(notificationService.getNotifications).toHaveBeenCalled();
+    expect(component.listaDeNotificacoes).toEqual(NOTIFICATIONS_MOCK);
   });
 });
