@@ -28,4 +28,12 @@ describe('ContentComponent', () => {
   it('Should create component', () => {
     expect(component).toBeTruthy();
   });
+
+  it('ngOnInit - Should call carregarNotificacoes method with success', () =>{
+    spyOn(component, 'carregarNotificacoes');
+    component.ngOnInit();
+    expect(component.carregarNotificacoes).toHaveBeenCalled();
+});
+
+
 });
