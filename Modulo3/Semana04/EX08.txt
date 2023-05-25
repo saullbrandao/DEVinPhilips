@@ -1,0 +1,13 @@
+Como podemos subir essa imagem gerada para o hub da Docker?
+R: 
+1. Fazer login no docker hub
+
+docker login
+
+2. Renomear a imagem pra seguir o padrão do docker hub 
+
+docker tag appjava:1.0 <usuário_no_docker_hub>/appjava:1.0
+
+3. Enviar a imagem para o docker hub
+
+docker push <usuário_no_docker_hub>/appjava:1.0
