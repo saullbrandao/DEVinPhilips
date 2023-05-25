@@ -1,0 +1,9 @@
+Qual comando usamos para subir serviços de um compose file em segundo plano? E para encerrar tudo que foi criado através do compose file?
+
+R: Para subir -> docker-compose up -d
+   Para encerrar -> docker-compose down
+
+Crie um arquivo .yml para subir 2 serviços com volumes persistentes, abertura de porta, nome de container e demais configurações que acharem pertinentes:
+
+    FRONT
+    BANCO DE DADOS
