@@ -1,0 +1,3 @@
+Qual comando usamos para ver detalhes de configurações, volumes, rede e demais informações de um container?
+
+R: docker inspect nome_do_container
