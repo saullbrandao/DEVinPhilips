@@ -1,0 +1,3 @@
+O que é a virtualização de aplicações em contêiner / microserviço? fale com suas palavras…
+
+R: É uma forma de encapsular cada serviço em um container isolado dos demais, a qual permite um gerenciamento melhor das aplicações. 
