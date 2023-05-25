@@ -1,0 +1,7 @@
+Sabendo que um contêiner pode ser encerrado a qualquer momento e que isso excluirá todos seus registros, dados e configurações, como podemos contornar essa situação? exemplifique
+
+R: Podemos utilizar o conceito de volume do docker para persistir os dados fora do container. Por exemplo: 
+
+docker run -v /caminho/local:/var/lib/mysql mysql
+
+Nesse caso o parâmetro '-v' serve para mapear o diretório '/var/lib/mysql' dentro do container para o diretorio '/caminho/local' do host, onde os dados serão persistidos. 
