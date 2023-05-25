@@ -1,0 +1,19 @@
+1° - produza um simples Dockerfile para compilar e executar uma aplicação Java através de um arquivo .java (se preferir pode usar outra tecnologia que esteja mais familiarizado….)
+R:
+
+FROM openjdk:17
+
+COPY Main.java /app/
+
+WORKDIR /app
+
+RUN javac Main.java
+
+CMD ["java", "Main"]
+
+
+2° - Mostre o comando para buildar esse Dockerfile.
+R: docker build -t appjava:1.0 .
+
+3° - Mostre como um container pode usar a imagem gerada
+R: docker run --name container_java appjava:1.0
