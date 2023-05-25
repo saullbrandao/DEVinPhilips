@@ -1,0 +1,3 @@
+Escreva o comando necessário para subir um container de nome web em segundo plano na porta 8081 com imagem do PHP versão 7.2 passando um diretório do host para dentro do container?
+
+R: docker run -d -p 8081:80 -v /caminho/local:/var/www/html --name web php:7.2
