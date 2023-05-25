@@ -1,0 +1,3 @@
+O que você entendeu da tecnologia Docker?
+
+R: Docker é uma tecnologia baseada em containers que visa isolar pacotes e suas dependências do resto do sistema facilitando a execução dos mesmos em diferentes ambientes.
