@@ -1,0 +1,3 @@
+Quais as formas de escalar uma aplicação no K8S? Escreva o comando….
+R: Escalamento manual -> kubectl scale deployment NomeDeploy --replicas=2
+ou através de yaml file
