@@ -1,0 +1,3 @@
+Diga com suas palavras o que é o Kubernetes (k8s)
+
+R: O Kubernetes é uma plataforma de orquestração de contêineres que simplifica o gerenciamento, escalonamento e implantação de aplicativos locais ou em cloud.
