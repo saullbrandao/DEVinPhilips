@@ -16,6 +16,12 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('ID: ' || v_id || ', Descrição: ' || v_descricao ||
                          ', Status: ' || v_status || ', Cadastro: ' || v_cadastro ||
                          ', Quantidade em Estoque: ' || v_quantidade);
+
+    EXCEPTION
+      WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('Erro: Dados não encontrados na tabela Produto.');
+        EXIT;
+    END;
   END LOOP;
   CLOSE cursor_produtos;
 END;
