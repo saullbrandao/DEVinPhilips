@@ -1,0 +1,8 @@
+CREATE OR REPLACE VIEW BuscarProduto AS
+SELECT p.id, pp.valor
+FROM produto p
+INNER JOIN precoproduto pp ON p.id = pp.idproduto
+WHERE pp.valor NOT BETWEEN 100 AND 200
+WITH CHECK OPTION;
+
+--UPDATE BUSCARPRODUTO SET VALOR = 150 WHERE ID = 1;
