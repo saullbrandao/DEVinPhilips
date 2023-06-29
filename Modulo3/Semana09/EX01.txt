@@ -1,0 +1,8 @@
+- Explique o qual o objetivo do Clean Code ser criado?
+R: O objetivo do Clean Code é tornar o código fácil de entender, manter e modificar, tanto para o autor original quanto para outros desenvolvedores que possam trabalhar nele no futuro.
+
+- Como aplicar boas práticas conforme o Clean Code?
+R:  - Dar nomes significativos a variáveis, funcões e classes.
+    - Cada função deve ter uma única tarefa bem definida e não deve ser excessivamente longa.
+    - Evitar a duplicação de código, buscando sempre reutilizar trechos já existentes através de funções ou classes
+    - Evitar comentários desnecessários. O código deve ser autoexplicativo, na medida do possível.
