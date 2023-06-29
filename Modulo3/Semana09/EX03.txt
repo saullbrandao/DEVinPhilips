@@ -1,0 +1,5 @@
+- Defina: o que é SRP?
+R: É um princípio que estabelece que uma classe deve ter apenas uma única responsabilidade
+
+- Cite e explique, um exemplo que pode ser utilizado o padrão SRP. O objetivo dele é promover a coesão e evitar a criação de classes grandes e complexas.
+R: Considerando uma classe chamada "EmailSender" que é responsável por enviar e-mails. Seguindo o SRP, essa classe deve ter apenas a responsabilidade de enviar e-mails. Isso significa que a classe "EmailSender" deve se concentrar apenas em fornecer um método simples e intuitivo para enviar e-mails, delegando outras responsabilidades, como a verificação se o usuário está auntenticado, para outra classe especializada.
