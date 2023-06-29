@@ -1,0 +1,9 @@
+- SOLID é o conjunto de acrônimo mnemônico de quais princípios?
+R:  S: Single Responsibility Principle (Princípio da Responsabilidade Única)
+    O: Open/Closed Principle (Princípio Aberto/Fechado)
+    L: Liskov Substitution Principle (Princípio da Substituição de Liskov)
+    I: Interface Segregation Principle (Princípio da Segregação de Interfaces)
+    D: Dependency Inversion Principle (Princípio da Inversão de Dependência)
+
+- Explique. Qual o objetivo do SOLID dentro de uma aplicação?
+R: O objetivo do SOLID dentro de uma aplicação é promover o desenvolvimento de código modular, extensível e de fácil manutenção.
