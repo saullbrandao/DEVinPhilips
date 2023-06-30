@@ -1,0 +1,3 @@
+- Explique. O que é um padrão Command?
+R: Com o padrão Command, você encapsula uma ação em um objeto de comando. Esse objeto contém todas as informações necessárias para realizar a ação quando for executado. Em vez de executar a ação diretamente, você usa o objeto de comando para enviá-lo a outros objetos que serão responsáveis por executá-lo.
+É como um controle remoto que você usa para dar comandos. Em vez de você mesmo executar uma ação, você pressiona um botão no controle e ele envia o comando para o objeto responsável pela ação. Assim, você pode controlar diferentes ações sem precisar saber como elas são executadas nos bastidores.
