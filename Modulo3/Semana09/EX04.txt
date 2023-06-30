@@ -1,0 +1,5 @@
+- O que e Design Patterns?
+R: São soluções prontas e testadas para problemas comuns no desenvolvimento de software
+
+- Quais os Catálogos que existem no Design Patterns?
+R: Padrões de Criação, Padrões de Estrutura, Padrões de Comportamento
