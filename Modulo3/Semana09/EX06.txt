@@ -1,0 +1,5 @@
+- Explique. O que é o pattern adapter?
+R: É um padrão de projeto estrutural que permite a conexão entre duas interfaces incompatíveis. Ele atua como um intermediário entre duas classes ou componentes, convertendo a interface de um para que seja compatível com o outro.
+
+- Qual a função do pattern adapter?
+R: A função principal do padrão Adapter é permitir que objetos com interfaces diferentes possam trabalhar juntos. Isso é alcançado por meio da criação de um adaptador que "traduz" as chamadas de método de uma interface em chamadas que possam ser entendidas pela outra interface.
